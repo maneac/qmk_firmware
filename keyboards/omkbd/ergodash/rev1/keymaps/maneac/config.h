@@ -20,13 +20,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #pragma once
 
-/* Select hand configuration */
-
 #define MASTER_LEFT
-// #define MASTER_RIGHT
-// #define EE_HANDS
 
-#define IGNORE_MOD_TAP_INTERRUPT
+#ifdef TAPPING_TERM
+#    undef TAPPING_TERM
+#endif
 #define TAPPING_TERM 175
 
 #define COMBO_COUNT 1
@@ -41,13 +39,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // From AVR pgmspace.h
 #    define PROGMEM __attribute__((__progmem__))
 
-#    include "../../../../quantum/config_common.h"
 #    include "../../../../quantum/quantum.h"
 #    include "../../../../quantum/quantum_keycodes.h"
 #    include "../../../../quantum/process_keycode/process_combo.h"
-#    include "../../rev1.h"
 #    include "../../config.h"
-#    include "../../../ergodash.h"
 #    include <stdio.h>
 #    include <stdint.h>
 
